@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&family=Poppins:wght@300&display=swap');
+
+:root 
+{
+
+    --color-1:rgb(240, 240, 240);
+    --color-2:rgb(200, 200, 200);
+    --color-3:rgb(139, 139, 139);
+    --font-color:rgb(40, 40, 40);
+    --shadow:rgba(18, 18, 18, 0.5);
+    --border-color:rgb(180, 179, 179);
+    --border-color: var(--color-1);
+
+    --hover-color:rgb(255, 255, 255);
+    --display-color:var(--color-1);
+
+    
+}
+
+* 
+{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--font-color);
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: grey;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+/* Header css start */
+.main-hdr 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    position: relative;
+    background:linear-gradient(to bottom , var(--color-1),var(--color-2));
+    box-shadow: 0px 0px 2px 1px var(--shadow); 
+    font-size: 1rem;
+}
+
+.main-hdr__logo 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 3rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.main-hdr__logo img 
+{
+    height: 3rem;
+    width: 3rem;
+}
+
+.main-hdr__title 
+{
+    word-spacing: 1vw;
+}
+/* Header end */
+
+
+/* Dark mode toggle styles and animations */
+.main-hdr .dark-mode 
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    right: 1rem;
+    height: 4rem;
+    width: fit-content;
+    padding-right: .5rem;
+    font-size: .65rem;
+}
+.dark-mode .dark-mode-toggle 
+{
+    width: 2.2rem;
+    height: 1rem;
+    position: relative;
+    margin-top: .1rem;
+    border-radius: 10rem;
+    background-color: #fff;
+    border: 1px solid rgb(128, 128, 128);
+}
+.dark-mode-toggle .round-slider 
+{
+    position: absolute;
+    bottom: 0px;
+    height: .85rem;
+    width: .85rem;
+    background-color: rgb(66, 66, 66);
+    border-radius: 50%;
+    transition: all .5s ease;
+}
+.round-slider.on 
+{
+    animation: round-slider-on .2s ease ;
+    animation-fill-mode: forwards;
+}
+.round-slider.off 
+{
+    animation: round-slider-off .2s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes round-slider-on 
+{
+    from{
+        right: 1.2rem;
+    }
+    to {
+        right: 0rem;
+    }
+}
+@keyframes round-slider-off 
+{
+    from{
+        right: 0rem;
+    }
+    to {
+        right: 1.2rem;
+    }
+}
+
+/* Dark mode styles end */
+
+
+/* Main-container css start */
+
+.main-cntr 
+{
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    background-color: lightblue;
+}
+
+.main-cntr .navbar 
+{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 4rem);
+    width: 7%;
+    min-width: 65px;
+    padding-top: 1rem;
+    font-size: .8rem;
+    background: linear-gradient(to right, var(--color-1), var(--color-2));
+    border-right: 1px solid var(--border-color);
+}
+
+.navbar__items 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 100%;
+}
+
+.navbar__items:hover 
+{
+    cursor: pointer;
+    border-top:1px  solid var(--border-color);
+    border-bottom:1px  solid var(--border-color);
+    background-color: var(--hover-color);
+}
+
+
+.display 
+{
+    height: calc(100vh - 4rem);
+    width: 93%;
+    display: flex;
+}
+
+.display__img-cntr 
+{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-auto-rows: 120px;
+    grid-gap: 1rem;
+    padding: 1rem;
+    overflow-y: auto;
+    width: 60%;
+    height: 100%;
+    background-color: var(--color-1);
+}
+
+.display__img-cntr_img {
+    background-size: cover;    
+    border:5px solid var(--color-2);
+    box-shadow: 0px 0px 3px 1px var(--shadow);
+    transition: .2s ease;
+}
+
+.display__img-cntr_img:hover {
+    cursor: pointer;
+    transform:scale(1.1);
+    box-shadow: 0px 0px 5px 2px var(--shadow);
+
+}
+
+.display__clicked-img-cntr 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow-y: auto;
+    padding: 1rem;
+    min-height: 50%;
+    width: 40%;
+    background-color: var(--color-2);
+}
+
+.clicked-img-cntr__img 
+{
+    width: 70%;
+    min-width: 250px;
+    height: 25vw;
+    margin: .5rem;
+    background-color: white;
+    background-size: cover;
+}
+
+.clicked-img-cntr__info 
+{
+    display: grid;
+    place-items: center;
+    background-color: var(--color-1);
+    word-wrap: break-word;
+    padding: 2rem;
+    width: 70%;
+    min-width: 250px;
+    height: 10vw;
+    font-size: .7rem;
+}
+
+@media only screen and (max-width: 1000px) 
+{
+    .display {
+        flex-direction: column;
+    }
+
+    .display__img-cntr {
+        width: 100%;
+        min-height: 40%;
+        border-right: none;
+        margin: 0;
+    }
+
+    .display__clicked-img-cntr {
+        flex-direction: row;
+        justify-content: space-around;
+        height: 60%;
+        width: 100%;
+        background-color: blue;
+        background-color: var(--color-2); 
+    }
+
+    .clicked-img-cntr__img {
+        max-width: 300px;
+        height: 250px;
+        background-color: #fff;
+        margin: .5rem;
+    }
+    .clicked-img-cntr__info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        max-width: 275px;
+        height: 150px;
+    }
+
+}
+
+
+@media only screen and (max-width: 720px) {
+    .display__clicked-img-cntr {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .clicked-img-cntr__img {
+        width: 250px;
+        max-height: 320px;
+    }
+
+    .clicked-img-cntr__info {
+        
+        max-width: 250px;
+        height: 120px;
+    }
+}
+
+
+@media only screen and (max-width: 620px) {
+    .main-cntr .navbar {
+        font-size: .7rem;
+    }
+
+    .display__img-cntr {
+        height: 40%;
+    }
+
+    .display__clicked-img-cntr {
+        flex-direction: column;
+        height: 60%;
+    }
+
+    .clicked-img-cntr__info {
+        
+        max-width: 250px;
+        height: 90px;
+    }
+
+}
+
+
+
